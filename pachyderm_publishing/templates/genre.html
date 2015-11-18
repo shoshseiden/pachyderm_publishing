@@ -1,0 +1,16 @@
+{% extends "site_base.html" %}
+{% load staticfiles %}
+
+
+{% block body %}
+    {% if genre_list %}
+        {% for genre in genre_list %}
+            <ul>
+                  <li><a href="{{ genre.genre_name }}">{{ genre.genre_name }}</a></li>
+            </ul>
+        {% endfor %}
+    {% else %}
+        <p>There are no genres available at this time.</p>
+    {% endif %}
+
+{% endblock %}
