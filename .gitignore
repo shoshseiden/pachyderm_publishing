@@ -2,3 +2,4 @@
 node_modules/
 dev.db
 /site_media/
+pachyderm_publishing/site_media/
