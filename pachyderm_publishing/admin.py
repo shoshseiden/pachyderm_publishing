@@ -19,8 +19,8 @@ class AuthorAdmin(admin.ModelAdmin):
 
 class BookAdmin(admin.ModelAdmin):
     fieldsets = [('Images', {'fields': ['book_cover']}),
-                 ('Book Information', {'fields': ['book_title', 'book_year',
-                  'book_synopsis']}),
+                 ('Book Information', {'fields': ['book_title', 'book_author',
+                  'book_year', 'book_genre', 'book_synopsis']}),
                 ]
 
 
