@@ -22,13 +22,13 @@ class Author(models.Model):
         return self.author_name
 
 
-class Books(models.Model):
+class Book(models.Model):
     book_genre = models.ForeignKey(Genre)
     book_author = models.ForeignKey(Author)
     book_title = models.CharField(max_length=100)
     book_year = models.IntegerField()
+    book_synopsis = models.TextField(blank=True)
     book_cover = models.ImageField(upload_to='book_covers')
 
     def __str__(self):
         return self.book_title
-        
