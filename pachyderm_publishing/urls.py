@@ -11,5 +11,6 @@ urlpatterns = [
     url(r'^genre/(?P<genre_id>[0-9]+)/$', views.library_by_genre, name='genre_library'),
     url(r'^author/$', views.AuthorView.as_view(), name='author'),
     url(r'^author/(?P<author_id>[0-9]+)/$', views.library_by_author, name='author_library'),
+    url(r'^library/$', views.LibraryView.as_view(), name='library'),
     url(r'^book/(?P<book_id>[0-9]+)/$', views.book, name='book'),
 ]

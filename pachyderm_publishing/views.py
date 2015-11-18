@@ -38,6 +38,14 @@ def library_by_author(request, author_id):
     return render(request, template_name, ctx)
 
 
+class LibraryView(generic.ListView):
+    template_name = "library.html"
+    context_object_name = "book_list"
+
+    def queryset(self):
+        return Book.objects.order_by('book_title')
+
+
 def book(request, book_id):
     template_name = "book.html"
     selected_book = get_object_or_404(Book, pk=book_id)
