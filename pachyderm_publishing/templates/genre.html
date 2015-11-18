@@ -3,6 +3,11 @@
 
 
 {% block body %}
+<header>
+  <h1>Genres</h1>
+</header>
+
+<section>
     {% if genre_list %}
         {% for genre in genre_list %}
             <ul>
@@ -12,5 +17,6 @@
     {% else %}
         <p>There are no genres available at this time.</p>
     {% endif %}
+</section>
 
 {% endblock %}
