@@ -1,0 +1,22 @@
+{% extends "site_base.html" %}
+{% load staticfiles %}
+
+
+{% block body %}
+<header>
+  <h1>Authors</h1>
+</header>
+
+<section>
+    {% if author_list %}
+        {% for author in author_list %}
+            <ul>
+                  <li><a href="{% url 'author_library' author.id %}">{{ author.author_formatted_name }}</a></li>
+            </ul>
+        {% endfor %}
+    {% else %}
+        <p>There are no authors available at this time.</p>
+    {% endif %}
+</section>
+
+{% endblock %}
