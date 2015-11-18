@@ -11,7 +11,7 @@
     {% if genre_list %}
         {% for genre in genre_list %}
             <ul>
-                  <li><a href="{{ genre.genre_name }}">{{ genre.genre_name }}</a></li>
+                  <li><a href="{% url 'genre_library' genre.id %}">{{ genre.genre_name }}</a></li>
             </ul>
         {% endfor %}
     {% else %}

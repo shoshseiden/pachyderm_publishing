@@ -14,3 +14,17 @@ class GenreView(generic.ListView):
 
     def queryset(self):
         return Genre.objects.order_by('genre_name')
+
+
+def library_by_genre(request, genre_id):
+    template_name = "library_by_genre.html"
+    selected_genre = get_object_or_404(Genre, pk=genre_id)
+    ctx = {'genre': selected_genre}
+    return render(request, template_name, ctx)
+
+
+def book(request, book_id):
+    template_name = "book.html"
+    selected_book = get_object_or_404(Book, pk=book_id)
+    ctx = {'book': selected_book}
+    return render(request, template_name, ctx)

@@ -1,0 +1,17 @@
+{% extends "site_base.html" %}
+{% load staticfiles %}
+
+
+{% block body %}
+
+<h1>{{ genre.genre_name }}</h1>
+
+<h2>Select a book from the list:</h2>
+
+<ul>
+  {% for book in genre.book_set.all %}
+      <li><a href="{% url 'book' book.id %}">{{ book.book_title }}</a></li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

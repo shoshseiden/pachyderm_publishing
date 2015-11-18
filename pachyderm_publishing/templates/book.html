@@ -1,0 +1,19 @@
+{% extends "site_base.html" %}
+{% load staticfiles %}
+
+
+{% block body %}
+<header>
+  <h1>Title: {{ book.book_title }}</h1>
+  <h2>Author: {{ book.book_author }}</h2>
+  <h3>Genre: {{ book.book_genre }}
+</header>
+
+<section>
+    <img src="{{ book.book_cover.url }}" alt="{{book.book_title}} Book Cover" height="200" width="100">
+    <p>Year Published: {{ book.book_year }}</p>
+    <p>Book Synopsis:</p>
+    <p>{{ book.book_synopsis }}
+</section>
+
+{% endblock %}
