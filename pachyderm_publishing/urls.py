@@ -1,6 +1,8 @@
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.views.generic import TemplateView
+from django.conf import settings
+from django.conf.urls.static import static  #Imported for images and css to work.
 
 from . import views
 
@@ -14,3 +16,5 @@ urlpatterns = [
     url(r'^library/$', views.LibraryView.as_view(), name='library'),
     url(r'^book/(?P<book_id>[0-9]+)/$', views.book, name='book'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
