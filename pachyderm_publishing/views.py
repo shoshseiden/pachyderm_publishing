@@ -51,3 +51,8 @@ def book(request, book_id):
     selected_book = get_object_or_404(Book, pk=book_id)
     ctx = {'book': selected_book}
     return render(request, template_name, ctx)
+
+
+def mission(request):
+    template_name = "mission.html"
+    return render(request, template_name)
