@@ -32,15 +32,3 @@ class Book(models.Model):
 
     def __str__(self):
         return self.book_title
-
-
-class Site_Content(models.Model):
-    '''
-    This section is for content such as banners and other general visuals
-    for the website.
-    '''
-    site_banner = models.ImageField(upload_to='banners')
-    site_img_name = models.CharField(max_length=15)
-
-    def __str__(self):
-        return self.site_img_name
