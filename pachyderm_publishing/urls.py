@@ -16,6 +16,7 @@ urlpatterns = [
     url(r'^library/$', views.LibraryView.as_view(), name='library'),
     url(r'^book/(?P<book_id>[0-9]+)/$', views.book, name='book'),
     url(r'^mission/$', views.mission, name='mission'),
+    url(r'^contact/$', views.contact, name='contact'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

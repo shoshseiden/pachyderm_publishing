@@ -56,3 +56,8 @@ def book(request, book_id):
 def mission(request):
     template_name = "mission.html"
     return render(request, template_name)
+
+
+def contact(request):
+    template_name = "contact.html"
+    return render(request, template_name)
