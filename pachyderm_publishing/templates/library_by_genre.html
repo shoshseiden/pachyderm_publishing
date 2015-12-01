@@ -1,6 +1,7 @@
 {% extends "site_base.html" %}
 {% load staticfiles %}
 
+{% block page_subtitle %}{{ genre.genre_name }}{% endblock %}
 
 {% block body %}
 <h1>{{ genre.genre_name }}</h1>
