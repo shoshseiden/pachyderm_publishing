@@ -1,0 +1,3 @@
+site: sjseiden/pachyderm_publishing
+branches:
+  master: primary

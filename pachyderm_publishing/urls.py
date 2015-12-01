@@ -10,12 +10,12 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r"^$", TemplateView.as_view(template_name="homepage.html"), name="home"),
     url(r'^genre/$', views.GenreView.as_view(), name='genre'),
-    url(r'^genre/(?P<genre_id>[0-9]+)/$', views.library_by_genre, name='genre_library'),
+    url(r'^genre/(?P<pk>[0-9]+)/$', views.LibraryByGenreView.as_view(), name='genre_library'),
     url(r'^author/$', views.AuthorView.as_view(), name='author'),
     url(r'^author/(?P<author_id>[0-9]+)/$', views.library_by_author, name='author_library'),
     url(r'^library/$', views.LibraryView.as_view(), name='library'),
     url(r'^book/(?P<book_id>[0-9]+)/$', views.book, name='book'),
-    url(r'^mission/$', views.mission, name='mission'),
+    url(r'^mission/$', views.MissionView.as_view(), name='mission'),
     url(r'^contact/$', views.contact, name='contact'),
 ]
 

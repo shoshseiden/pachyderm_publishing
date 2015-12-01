@@ -9,6 +9,7 @@ from .models import Book, Genre, Author
 
 
 class GenreView(generic.ListView):
+
     template_name = "genre.html"
     context_object_name = "genre_list"
 
@@ -24,11 +25,10 @@ class AuthorView(generic.ListView):
         return Author.objects.order_by('author_formatted_name')
 
 
-def library_by_genre(request, genre_id):
+class LibraryByGenreView(generic.DetailView):
+
+    model = Genre
     template_name = "library_by_genre.html"
-    selected_genre = get_object_or_404(Genre, pk=genre_id)
-    ctx = {'genre': selected_genre}
-    return render(request, template_name, ctx)
 
 
 def library_by_author(request, author_id):
@@ -53,9 +53,9 @@ def book(request, book_id):
     return render(request, template_name, ctx)
 
 
-def mission(request):
+class MissionView(generic.TemplateView):
+
     template_name = "mission.html"
-    return render(request, template_name)
 
 
 def contact(request):

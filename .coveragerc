@@ -1,0 +1,7 @@
+[run]
+source = pachyderm_publishing
+omit = pachyderm_publishing/tests.py,pachyderm_publishing/migrations/*
+branch = 1
+
+[report]
+omit = pachyderm_publishing/tests.py,pachyderm_publishing/migrations/*
