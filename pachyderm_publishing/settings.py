@@ -9,7 +9,7 @@ BASE_DIR = PACKAGE_ROOT
 DEBUG = True
 
 DATABASES = {
-    "default": dj_database_url.config(default="postgres://localhost/pachydermdb")
+    "default": dj_database_url.config(default="sqlite:///dev.db")
 }
 
 ALLOWED_HOSTS = []
