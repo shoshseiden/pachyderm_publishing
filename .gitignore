@@ -1,4 +1,6 @@
 *.pyc
 node_modules/
 dev.db
-/pachyderm_publishing/site_media/
+pachyderm_publishing/site_media/
+htmlcov
+.coverage
