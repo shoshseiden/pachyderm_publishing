@@ -58,6 +58,6 @@ class MissionView(generic.TemplateView):
     template_name = "mission.html"
 
 
-def contact(request):
+class ContactView(generic.TemplateView):
+
     template_name = "contact.html"
-    return render(request, template_name)
