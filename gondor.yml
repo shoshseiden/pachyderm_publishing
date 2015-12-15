@@ -1,3 +1,9 @@
 site: sjseiden/pachyderm_publishing
 branches:
   master: primary
+
+deploy:
+  services:
+    - web-rtoig
+
+buildpack: https://buildpack.gondor.io/python`
