@@ -29,6 +29,7 @@ class Book(models.Model):
     book_year = models.IntegerField()
     book_synopsis = models.TextField(blank=True)
     book_cover = models.ImageField(upload_to='book_covers')
+    amazon_link = models.CharField(max_length=100)
 
     def __str__(self):
         return self.book_title

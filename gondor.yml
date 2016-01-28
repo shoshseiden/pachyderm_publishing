@@ -6,4 +6,4 @@ deploy:
   services:
     - web-rtoig
 
-buildpack: https://buildpack.gondor.io/python`
+buildpack: https://buildpack.gondor.io/python

@@ -14,7 +14,8 @@
     <img src="{{ book.book_cover.url }}" alt="{{book.book_title}} Book Cover" height="300" width="210">
     <p>Year Published: {{ book.book_year }}</p>
     <p>Book Synopsis:</p>
-    <p>{{ book.book_synopsis }}
+    <p>{{ book.book_synopsis }}</p>
+    <p>To buy this book from amazon: <a href="{{book.amazon_link}}">Click Here</a></p>
 </section>
 
 {% endblock %}

@@ -21,6 +21,7 @@ class BookAdmin(admin.ModelAdmin):
     fieldsets = [('Images', {'fields': ['book_cover']}),
                  ('Book Information', {'fields': ['book_title', 'book_author',
                   'book_year', 'book_genre', 'book_synopsis']}),
+                 ('Links', {'fields': ['amazon_link']}),
                 ]
 
 
