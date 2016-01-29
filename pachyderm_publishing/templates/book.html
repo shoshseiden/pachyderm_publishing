@@ -15,7 +15,12 @@
     <p>Year Published: {{ book.book_year }}</p>
     <p>Book Synopsis:</p>
     <p>{{ book.book_synopsis }}</p>
-    <p>To buy this book from amazon: <a href="{{book.amazon_link}}">Click Here</a></p>
+
+    {% if book.amazon_link %}
+        <p>To buy this book from amazon: <a href="{{book.amazon_link}}">Click Here</a></p>
+    {% else %}
+        <p>No amazon link available at this time.</p>
+    {% endif %}
 </section>
 
 {% endblock %}
