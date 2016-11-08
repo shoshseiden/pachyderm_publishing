@@ -5,6 +5,7 @@ from django.template.loader import get_template
 from django.template import RequestContext, loader
 from django.views import generic
 
+from .forms import ReviewForm
 from .models import Book, Genre, Author
 
 
@@ -49,7 +50,9 @@ class LibraryView(generic.ListView):
 def book(request, book_id):
     template_name = "book.html"
     selected_book = get_object_or_404(Book, pk=book_id)
-    ctx = {'book': selected_book}
+    if request.method == "POST":
+        review_form = ReviewForm()
+    ctx = {'book': selected_book, 'review_form': review_form}
     return render(request, template_name, ctx)
 
 
