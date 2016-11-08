@@ -1,5 +1,6 @@
 {% extends "site_base.html" %}
 {% load staticfiles %}
+{% load bootstrap %}
 
 {% block page_subtitle %}{{ book.book_title }}{% endblock %}
 
@@ -26,7 +27,7 @@
 <section>
     <form method="post" action="">
     {% csrf_token %}
-    {{ review_form }}
+    {{ review_form|bootstrap }}
     <input type="submit" class="btn btn-default">
     </form>
 </section>
