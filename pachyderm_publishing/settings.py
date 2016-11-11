@@ -128,6 +128,9 @@ INSTALLED_APPS = [
 
     # project
     "pachyderm_publishing",
+
+    # pinax ratings
+    "pinax.ratings"
 ]
 
 # A sample logging configuration. The only tangible logging
