@@ -17,6 +17,7 @@ urlpatterns = [
     url(r'^book/(?P<book_id>[0-9]+)/$', views.book, name='book'),
     url(r'^mission/$', views.MissionView.as_view(), name='mission'),
     url(r'^contact/$', views.ContactView.as_view(), name='contact'),
+    url(r"^ratings/", include("pinax.ratings.urls")),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

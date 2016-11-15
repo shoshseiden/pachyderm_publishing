@@ -1,6 +1,7 @@
 {% extends "theme_bootstrap/base.html" %}
 
 {% load staticfiles %}
+
 {% load i18n %}
 
 {% block head_title_base %}Pachyderm Publishing | {% block page_subtitle %}{% endblock %}{% endblock %}
@@ -13,7 +14,7 @@
     <a href="{% url 'library' %}">Library</a> |
     <a href="{% url 'genre' %}">Genres</a> |
     <a href="{% url 'author' %}">Authors</a> |
-    <a href="{% url 'mission' %}">Mission</a> 
+    <a href="{% url 'mission' %}">Mission</a>
   </nav>
 {% endblock %}
 

@@ -1,6 +1,10 @@
 {% extends "site_base.html" %}
+
 {% load staticfiles %}
+
 {% load bootstrap %}
+
+{% load pinax_ratings_tags %}
 
 {% block page_subtitle %}{{ book.book_title }}{% endblock %}
 
@@ -25,6 +29,8 @@
 </section>
 
 <section>
+    {% user_rating request.user obj as the_user_rating %}
+    <div class="user_rating">{{ the_user_rating }}</div>
     <form method="post" action="">
     {% csrf_token %}
     {{ review_form|bootstrap }}
