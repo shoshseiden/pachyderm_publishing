@@ -28,6 +28,7 @@
     {% endif %}
 </section>
 
+{% comment %}
 <section>
     {% user_rating request.user obj as the_user_rating %}
     <div class="user_rating">{{ the_user_rating }}</div>
@@ -37,5 +38,6 @@
     <input type="submit" class="btn btn-default">
     </form>
 </section>
+{% endcomment %}
 
 {% endblock %}
