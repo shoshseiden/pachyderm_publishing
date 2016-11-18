@@ -50,12 +50,8 @@ class LibraryView(generic.ListView):
 def book(request, book_id):
     template_name = "book.html"
     selected_book = get_object_or_404(Book, pk=book_id)
-    # if request.method == "POST":
-    #     review_form = ReviewForm(request.POST)
-    # else:
-    #     review_form = ReviewForm()
-    ctx = {'book': selected_book}
-    # Add to ctx dictionary when ready:  'review_form': review_form
+    review_form = ReviewForm()
+    ctx = {'book': selected_book, 'review_form': review_form}
     return render(request, template_name, ctx)
 
 
