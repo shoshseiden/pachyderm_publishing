@@ -57,8 +57,8 @@ def book(request, book_id):
 
 def add_review(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
-    form = ReviewForm(request.POST)
-    if form.is_valid():
+    review_form = ReviewForm(request.POST)
+    if review_form.is_valid():
         book_rating = form.cleaned_data['book_rating']
         book_review = form.cleaned_data['book_review']
         user_name = form.cleaned_data['user_name']
