@@ -55,6 +55,28 @@ def book(request, book_id):
     return render(request, template_name, ctx)
 
 
+def add_review(request, book_id):
+    book = get_object_or_404(Book, pk=book_id)
+    form = ReviewForm(request.POST)
+    if form.is_valid():
+        book_rating = form.cleaned_data['book_rating']
+        book_review = form.cleaned_data['book_review']
+        user_name = form.cleaned_data['user_name']
+        review = Review()
+        review.book = book
+        review.user_name = user_name
+        review.book_rating = book_rating
+        review.book_review = book_review
+        review.pub_date = datetime.datetime.now()
+        review.save()
+        # Always return an HttpResponseRedirect after sucessfully dealing
+        # with POST data. This prevents data from being posted twice if a
+        # user hits the back button.
+        return HttpResponseRedirect(reverse('book', args=(book.id,)))
+
+    return render(request, 'book.html', {'book': book, 'review_form': review_form})
+
+
 class MissionView(generic.TemplateView):
 
     template_name = "mission.html"
