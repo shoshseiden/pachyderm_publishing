@@ -1,11 +1,11 @@
-import datetime
-from django import forms
-
-# class LoginForm(forms.Form):
-#     username = forms.CharField()
-#     password = forms.CharField(widget=forms.Password)
+from django.forms import ModelForm, Textarea
+from .models import Review
 
 
-class ReviewForm(forms.Form):
-    review_date = forms.DateField(initial=datetime.date.today)
-    book_review = forms.CharField(widget=forms.Textarea)
+class ReviewForm(ModelForm):
+    class Meta:
+        model = Review
+        fields = ['user_name', 'rating', 'book_review']
+                widgets = {
+                    'comment': Textarea(attrs={'cols': 40, 'rows': 15})
+                }
