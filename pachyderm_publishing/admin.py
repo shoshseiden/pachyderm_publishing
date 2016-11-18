@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Genre, Author, Book
+from .models import Genre, Author, Book, Review
 
 
 class BookInline(admin.TabularInline):
@@ -25,8 +25,14 @@ class BookAdmin(admin.ModelAdmin):
                 ]
 
 
+class ReviewAdmin(admin.ModelAdmin):
+    model = Review
+    list_display = ('book', 'book_rating', 'user_name', 'book_review', 'pub_date')
+    list_filter = ['pub_date', 'user_name']
+    search_fields = ['book_review']
 
 
 admin.site.register(Book, BookAdmin)
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Genre, GenreAdmin)
+admin.site.register(Review, ReviewAdmin)
