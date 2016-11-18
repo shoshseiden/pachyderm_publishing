@@ -6,6 +6,6 @@ class ReviewForm(ModelForm):
     class Meta:
         model = Review
         fields = ['user_name', 'book_rating', 'book_review']
-                widgets = {
-                    'book_review': Textarea(attrs={'cols': 40, 'rows': 15})
-                }
+        widgets = {
+            'book_review': Textarea(attrs={'cols': 40, 'rows': 15})
+        }
