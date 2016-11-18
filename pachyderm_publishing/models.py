@@ -1,5 +1,7 @@
 from django.db import models
 
+import numpy as np
+
 
 class Genre(models.Model):
     genre_name = models.CharField(max_length=15)
@@ -31,5 +33,24 @@ class Book(models.Model):
     book_cover = models.ImageField(upload_to='book_covers')
     amazon_link = models.CharField(max_length=100, blank=True)
 
+    def average_rating(self):
+        all_ratings = map(lambda x: x.rating, self.review_set.all())
+        return np.mean(all_ratings)
+
     def __str__(self):
         return self.book_title
+
+
+class Review(models.Model):
+    RATING_CHOICES = (
+        (1, "1"),
+        (2, "2"),
+        (3, "3"),
+        (4, "4"),
+        (5, "5"),
+    )
+    book = models.ForeignKey(Book)
+    pub_date = models.DateTimeField('date published')
+    user_name = models.CharField(max_length=100)
+    book_review = models.TextField(blank=True)
+    book_rating = models.IntegerField(choices=RATING_CHOICES)
