@@ -63,10 +63,12 @@ def add_review(request, book_id):
     review_form = ReviewForm(request.POST)
     if review_form.is_valid():
         rating = review_form.cleaned_data['rating']
+        book_review_title = review_form.cleaned_data['book_review_title']
         book_review = review_form.cleaned_data['book_review']
         user_name = review_form.cleaned_data['user_name']
         review = Review()
         review.book = book
+        review.book_review_title = book_review_title
         review.user_name = user_name
         review.rating = rating
         review.book_review = book_review

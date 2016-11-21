@@ -35,8 +35,9 @@
     <div>
         {% for review in book.review_set.all %}
         <div>
+            <h5>{{ review.book_review_title }}</h5>
             <p>{{ review.book_review }}</p>
-            <h6>Rated: {{ review.rating }} of 5 by {{ review.user_name }}</h6>
+            <h6>Rated: {{ review.rating }} of 5 by {{ review.user_name }} on {{ review.pub_date }} </h6>
         </div>
         {% endfor %}
     </div>
