@@ -54,7 +54,7 @@ class Review(models.Model):
     user_name = models.CharField(max_length=100)
     book_review_title = models.CharField(max_length=200)
     book_review = models.TextField(blank=True)
-    book_rating = models.IntegerField(choices=RATING_CHOICES)
+    rating = models.IntegerField(choices=RATING_CHOICES)
 
     def __str__(self):
         return self.book_review_title

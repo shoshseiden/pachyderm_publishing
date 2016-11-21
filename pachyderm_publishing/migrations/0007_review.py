@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 ('pub_date', models.DateTimeField(verbose_name=b'date published')),
                 ('user_name', models.CharField(max_length=100)),
                 ('book_review', models.TextField(blank=True)),
-                ('book_rating', models.IntegerField(choices=[(1, b'1'), (2, b'2'), (3, b'3'), (4, b'4'), (5, b'5')])),
+                ('rating', models.IntegerField(choices=[(1, b'1'), (2, b'2'), (3, b'3'), (4, b'4'), (5, b'5')])),
                 ('book', models.ForeignKey(to='pachyderm_publishing.Book')),
             ],
         ),

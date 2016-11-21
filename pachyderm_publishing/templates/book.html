@@ -31,11 +31,12 @@
 <section>
     <h3>Reviews</h3>
     {% if book.review_set.all %}
+    <h6>{{ book.review_set.count }} reviews ({{ book.average_rating | floatformat }} average rating)</h6>
     <div>
         {% for review in book.review_set.all %}
         <div>
             <p>{{ review.book_review }}</p>
-            <h6>Rated: {{ review.book_rating }} of 5 by {{ review.user_name }}</h6>
+            <h6>Rated: {{ review.rating }} of 5 by {{ review.user_name }}</h6>
         </div>
         {% endfor %}
     </div>

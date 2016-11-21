@@ -62,13 +62,13 @@ def add_review(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
     review_form = ReviewForm(request.POST)
     if review_form.is_valid():
-        book_rating = review_form.cleaned_data['book_rating']
+        rating = review_form.cleaned_data['rating']
         book_review = review_form.cleaned_data['book_review']
         user_name = review_form.cleaned_data['user_name']
         review = Review()
         review.book = book
         review.user_name = user_name
-        review.book_rating = book_rating
+        review.rating = rating
         review.book_review = book_review
         review.pub_date = datetime.datetime.now()
         review.save()
