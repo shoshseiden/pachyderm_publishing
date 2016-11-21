@@ -27,14 +27,14 @@
         <p>No amazon link available at this time.</p>
     {% endif %}
 </section>
-
+<hr>
 <section>
     <h3>Reviews</h3>
     {% if book.review_set.all %}
     <div>
         {% for review in book.review_set.all %}
         <div>
-            <em>{{ review.book_review }}</em>
+            <p>{{ review.book_review }}</p>
             <h6>Rated: {{ review.book_rating }} of 5 by {{ review.user_name }}</h6>
         </div>
         {% endfor %}
