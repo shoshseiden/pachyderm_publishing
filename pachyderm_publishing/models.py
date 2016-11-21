@@ -52,5 +52,9 @@ class Review(models.Model):
     book = models.ForeignKey(Book)
     pub_date = models.DateTimeField('date published')
     user_name = models.CharField(max_length=100)
+    book_review_title = models.CharField(max_length=200)
     book_review = models.TextField(blank=True)
     book_rating = models.IntegerField(choices=RATING_CHOICES)
+
+    def __str__(self):
+        return self.book_review_title
