@@ -1,12 +1,15 @@
+import datetime
+
 from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, HttpResponseRedirect
+from django.core.urlresolvers import reverse
 from django import template
 from django.template.loader import get_template
 from django.template import RequestContext, loader
 from django.views import generic
 
 from .forms import ReviewForm
-from .models import Book, Genre, Author
+from .models import Book, Genre, Author, Review
 
 
 class GenreView(generic.ListView):
@@ -59,9 +62,9 @@ def add_review(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
     review_form = ReviewForm(request.POST)
     if review_form.is_valid():
-        book_rating = form.cleaned_data['book_rating']
-        book_review = form.cleaned_data['book_review']
-        user_name = form.cleaned_data['user_name']
+        book_rating = review_form.cleaned_data['book_rating']
+        book_review = review_form.cleaned_data['book_review']
+        user_name = review_form.cleaned_data['user_name']
         review = Review()
         review.book = book
         review.user_name = user_name
