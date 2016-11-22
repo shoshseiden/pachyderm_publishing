@@ -121,7 +121,6 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "django.contrib.staticfiles",
     "django.contrib.admin",
-    "pinax.ratings",
 
     # theme
     "bootstrapform",
