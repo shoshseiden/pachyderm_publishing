@@ -31,8 +31,3 @@ class ViewsTest(TestCase):
         url = reverse('mission')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-
-    def test_contact(self):
-        url = reverse('contact')
-        response = self.client.get(url)
-        self.assertEqual(response.status_code, 200)
