@@ -14,7 +14,6 @@ class ViewsTest(TestCase):
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
-
     def test_genre(self):
         Genre.objects.create(genre_name="test genre")
         url = reverse('genre')
