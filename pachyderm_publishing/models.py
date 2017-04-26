@@ -16,6 +16,9 @@ class Author(models.Model):
     to go by last name.
 
     author_name will be the normal listing on the book page.
+
+    For more than one author on book: author_formatted_name, authors will be
+    separated by semi-colon and author_name will be separated by '&'.
     '''
     author_name = models.CharField(max_length=50)
     author_formatted_name = models.CharField(max_length=50)
