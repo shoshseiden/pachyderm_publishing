@@ -24,7 +24,9 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('book_title', models.CharField(max_length=100)),
                 ('book_year', models.IntegerField()),
+                ('book_synopsis', models.TextField(blank=True)),
                 ('book_cover', models.ImageField(upload_to=b'book_covers')),
+                ('amazon_link', models.CharField(max_length=100, blank=True)),
                 ('book_author', models.ForeignKey(to='pachyderm_publishing.Author')),
             ],
         ),
@@ -33,6 +35,18 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('genre_name', models.CharField(max_length=15)),
+            ],
+        ),
+        migrations.CreateModel(
+            name='Review',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('pub_date', models.DateTimeField(verbose_name=b'date published')),
+                ('user_name', models.CharField(max_length=100)),
+                ('book_review_title', models.CharField(max_length=200)),
+                ('book_review', models.TextField(blank=True)),
+                ('rating', models.IntegerField(choices=[(1, b'1'), (2, b'2'), (3, b'3'), (4, b'4'), (5, b'5')])),
+                ('book', models.ForeignKey(to='pachyderm_publishing.Book')),
             ],
         ),
         migrations.AddField(
