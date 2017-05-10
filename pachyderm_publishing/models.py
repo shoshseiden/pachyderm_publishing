@@ -1,6 +1,5 @@
 from django.db import models
-
-import numpy as np
+import operator
 
 
 class Genre(models.Model):
@@ -37,8 +36,9 @@ class Book(models.Model):
     amazon_link = models.CharField(max_length=100, blank=True)
 
     def average_rating(self):
-        all_ratings = map(lambda x: x.rating, self.review_set.all())
-        return np.mean(all_ratings)
+        #all_ratings = map(lambda x: x.rating, self.review_set.all())
+        all_ratings = list(map(operator.attrgetter("rating"), self.review_set.all()))
+        return sum(all_ratings) / len(all_ratings)
 
     def __str__(self):
         return self.book_title

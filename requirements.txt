@@ -7,4 +7,3 @@ dj-database-url
 Pillow
 git+https://github.com/jschneier/django-storages.git#egg=django-storages
 apache-libcloud==0.18.0
-numpy
