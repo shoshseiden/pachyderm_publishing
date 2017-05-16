@@ -8,11 +8,13 @@
 
 <h2>Select a book from the list:</h2>
 
+<div id="librarycontent">
 <ul>
   {% for book in genre.book_set.all %}
   <li><a href="{% url 'book' book.id %}"><img src="{{ book.book_cover.url }}" alt="{{ book.book_title }} cover"
     height="150" width="100" /><p>{{ book.book_title }} ({{ book.book_year }})</p></a><li>
   {% endfor %}
 </ul>
+</div>
 
 {% endblock %}

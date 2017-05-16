@@ -9,6 +9,7 @@
 
 <h2>Select a book from the list:</h2>
 
+<div id="librarycontent">
 <ul>
   {% if book_list %}
     {% for book in book_list %}
@@ -18,5 +19,6 @@
         <p>No books available</p>
   {% endif %}
 </ul>
+</div>
 
 {% endblock %}
