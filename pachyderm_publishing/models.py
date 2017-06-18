@@ -3,7 +3,7 @@ import operator
 
 
 class Genre(models.Model):
-    genre_name = models.CharField(max_length=15)
+    genre_name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.genre_name
@@ -19,8 +19,8 @@ class Author(models.Model):
     For more than one author on book: author_formatted_name, authors will be
     separated by semi-colon and author_name will be separated by '&'.
     '''
-    author_name = models.CharField(max_length=50)
-    author_formatted_name = models.CharField(max_length=50)
+    author_name = models.CharField(max_length=100)
+    author_formatted_name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.author_name
