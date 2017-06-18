@@ -14,6 +14,7 @@
 </header>
 
 <section>
+  <div id="book_content">
     <img src="{{ book.book_cover.url }}" alt="{{book.book_title}} Book Cover" height="300" width="210">
     <p>Year Published: {{ book.book_year }}</p>
     <p>Book Synopsis:</p>
@@ -24,6 +25,7 @@
     {% else %}
         <p>No amazon link available at this time.</p>
     {% endif %}
+  </div>
 </section>
 <hr>
 <section>
