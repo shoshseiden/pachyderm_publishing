@@ -14,7 +14,8 @@
   {% if book_list %}
     {% for book in book_list %}
     <li><a href="{% url 'book' book.id %}"><img src="{{ book.book_cover.url }}" alt="{{ book.book_title }} cover"
-      height="150" width="100" /><p>{{ book.book_title }} ({{ book.book_year }})</p></a><li>    {% endfor %}
+      height="150" width="100" /><p>{{ book.book_title }} ({{ book.book_year }})</p></a><li>
+    {% endfor %}
   {% else %}
         <p>No books available</p>
   {% endif %}
