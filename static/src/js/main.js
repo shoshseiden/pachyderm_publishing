@@ -25,5 +25,5 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('#book_content img').css("border-style", "solid");
   $('#book_content img').css("border-color", "black");
-  $('#book_content img').css("border-width", "5px");
+  $('#book_content img').css("border-width", "2px");
 });
