@@ -1,7 +1,5 @@
 from django.db import models
 
-import numpy as np
-
 
 class Genre(models.Model):
     genre_name = models.CharField(max_length=15)
