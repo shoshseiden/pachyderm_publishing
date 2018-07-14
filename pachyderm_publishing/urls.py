@@ -18,6 +18,7 @@ urlpatterns = [
     url(r'^book/(?P<book_id>[0-9]+)/add_review/$', views.add_review, name='add_review'),
     url(r'^mission/$', views.MissionView.as_view(), name='mission'),
     url(r'^contact/$', views.ContactView.as_view(), name='contact'),
+    url(r'^pricing/$', views.PriceView.as_view(), name='pricing'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

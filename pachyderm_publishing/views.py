@@ -90,3 +90,8 @@ class MissionView(generic.TemplateView):
 class ContactView(generic.TemplateView):
 
     template_name = "contact.html"
+
+
+class PriceView(generic.TemplateView):
+
+    template_name = "pricing.html"
